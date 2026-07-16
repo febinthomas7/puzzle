@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dh1pdpntxhokq"]
+
+[ext_resource type="Script" uid="uid://chmosmdplif71" path="res://scripts/main.gd" id="1_o5qli"]
+
+[node name="main" type="Control" unique_id=1268768019]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5qli")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=73767725]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=714534038]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="StepsLabel" type="Label" parent="CanvasLayer" unique_id=325467886]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="UndoButton" type="Button" parent="CanvasLayer" unique_id=680487718]
+visible = false
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="GameOverPanel" type="Panel" parent="CanvasLayer" unique_id=1824352139]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1115966592]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 173.0
+offset_right = 419.0
+offset_bottom = 213.0
+scale = Vector2(9.954932, 8.068611)

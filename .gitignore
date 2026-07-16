@@ -1,0 +1,25 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Hardware-specific auto-generated exports
+*.tmp
+*.uid
+
+# Export templates and builds (uncomment if you create these folders inside your project)
+# /build/
+# /exports/
+
+# Mono/C# specific ignores (if you ever use the .NET version)
+.mono/
+data_*/
+mono_crash_*.txt
+*.csproj
+*.sln
+
+# System/OS specific ignores
+.DS_Store
+Thumbs.db
+
+# Crash logs
+godot.log
