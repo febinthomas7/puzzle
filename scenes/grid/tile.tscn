@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cneg2ebxnliwu"]
+
+[ext_resource type="Script" uid="uid://c8ipbe6k3ntrk" path="res://scripts/view/tile.gd" id="1_3b7md"]
+
+[node name="tile" type="Panel" unique_id=853691090]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3b7md")
+
+[node name="Label" type="Label" parent="." unique_id=151092872]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
