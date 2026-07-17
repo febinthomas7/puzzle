@@ -87,3 +87,12 @@ func _on_undo_pressed() -> void:
 
 func _on_undo_button_pressed() -> void:
 	_on_undo_pressed()
+
+func _on_restart_pressed() -> void:
+	hud.game_over_panel.visible = false
+	hud.win_panel.visible = false
+	_step_count = 0
+	_is_game_resolved = false  # <-- this line was missing
+	move_history.clear()
+	grid_model.setup(grid_width, grid_height)
+	hud.update_steps(max_steps)
