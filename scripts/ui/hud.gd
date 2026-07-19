@@ -11,7 +11,7 @@ class_name HUD
 func _ready() -> void:
 	game_over_panel.visible = false
 	win_panel.visible = false
-	combo_label.visible = false # Keep hidden until a real combo happens
+	combo_label.visible = true # Keep hidden until a real combo happens
 
 func update_score(score: int) -> void:
 	score_label.text = "SCORE: %d" % score
@@ -21,14 +21,14 @@ func update_target_score(target_value: int) -> void:
 	target_label.text = "TARGET: %d" % target_value
 
 func update_steps(steps: int) -> void:
-	steps_label.text = "REMAINING: %d" % steps
+	steps_label.text = "STEPS: %d" % steps
 
 # CLEANED UP: Pointing directly to the numerical format strategy
 func update_steps_text(steps_text: int) -> void:
-	steps_label.text = "REMAINING: %d" % steps_text
+	steps_label.text = "STEPS: %d \n" %  steps_text
 
 func update_combo(multiplier: int) -> void:
-	combo_label.text = "⚡ COMBO x%d" % multiplier
+	combo_label.text = "⚡COMBO x%d" % multiplier
 	
 	# Dynamically shift visual color profile when combo goes wild
 	if multiplier > 1:

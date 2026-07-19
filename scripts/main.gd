@@ -18,6 +18,8 @@ func _ready() -> void:
 	move_history = MoveHistory.new()
 
 	# Connect core structural model pipelines
+	grid_model.board_initialized.connect(_on_board_initialized)  # ADD
+
 	grid_model.board_changed.connect(_on_board_changed)
 	grid_model.score_changed.connect(_on_score_changed)
 	grid_model.combo_changed.connect(_on_combo_changed)
@@ -45,6 +47,7 @@ func _show_main_menu() -> void:
 
 # Intercepts selection signal payload and kicks off game loop
 func _on_difficulty_selected(difficulty: String) -> void:
+	SoundManager.play_ui_click()
 	current_difficulty = difficulty 
 	main_menu.visible = false
 	grid_view.visible = true
@@ -79,7 +82,6 @@ func _on_tile_push_requested(from: Vector2i, direction: int) -> void:
 		move_history.push(snapshot)
 		
 		
-		grid_model.resolve_chain_reactions()
 
 func _on_board_changed() -> void:
 	grid_view.render(grid_model)
@@ -111,19 +113,26 @@ func _on_undo_pressed() -> void:
 		return 
 		
 	if move_history.can_undo():
+		SoundManager.play_ui_click()
 		var snapshot: Dictionary = move_history.pop()
 		grid_model.restore_snapshot(snapshot)
 		
 		# Re-enable inputs on retroactive rollback steps
 		_is_game_resolved = false 
 
+func _on_board_initialized() -> void:
+	grid_view.render_immediate(grid_model)
+
 func _on_undo_button_pressed() -> void:
+	SoundManager.play_ui_click()
 	_on_undo_pressed()
 
 
 func _on_restart_pressed() -> void:
+	SoundManager.play_ui_click()
 	_start_new_game()
 
 
 func _on_button_pressed() -> void:
+	SoundManager.play_ui_click()
 	_show_main_menu()
