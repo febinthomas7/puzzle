@@ -163,17 +163,19 @@ sequenceDiagram
 
 ## Project Structure
 
+​`
 scripts/
-├── core/ # GridModel, MoveHistory — pure logic, no Node dependency
-├── input/ # InputController — drag detection and direction locking
-├── view/ # GridView, Tile — render grid state, never mutate it
-├── ui/ # HUD — score/target/steps/combo display, win/lose overlays
-├── systems/ # SoundManager — pooled audio playback autoload
-└── main.gd # Wires input -> model -> view together
+├── core/       # GridModel, MoveHistory — pure logic, no Node dependency
+├── input/      # InputController — drag detection and direction locking
+├── view/       # GridView, Tile — render grid state, never mutate it
+├── ui/         # HUD — score/target/steps/combo display, win/lose overlays
+├── systems/    # SoundManager — pooled audio playback autoload
+└── main.gd     # Wires input -> model -> view together
 scenes/
 ├── main.tscn
-├── grid/ # GridView + Tile scenes
-└── ui/ # HUD, panels
+├── grid/       # GridView + Tile scenes
+└── ui/         # HUD, panels
+​`
 
 ## Running the Project
 
