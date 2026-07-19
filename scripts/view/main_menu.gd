@@ -22,7 +22,7 @@ func _ready() -> void:
 	_apply_text_styling()
 
 func _on_difficulty_pressed(mode: String) -> void:
-	# Broadcast selection metrics upward out of the isolated layer
+	
 	difficulty_selected.emit(mode)
 
 func _apply_text_styling() -> void:
